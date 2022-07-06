@@ -1,1 +1,0 @@
-{"StartTimeUtc":"2022-04-28T06:00:00.0010243Z","EndTimeUtc":"2022-04-28T06:00:00.0495788Z","Status":"Completed","Name":"Extraer imágenes de capítulo","Key":"RefreshChapterImages","Id":"13e82435eb8f2cdc78c9e106fb7edd05"}

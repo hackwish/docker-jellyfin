@@ -1,1 +1,0 @@
-{"StartTimeUtc":"2022-07-06T19:28:27.5271103Z","EndTimeUtc":"2022-07-06T19:28:27.5288662Z","Status":"Completed","Name":"Limpiar directorio de transcodificaci\u00F3n","Key":"DeleteTranscodeFiles","Id":"7d8088c10902f1bf4072ded42437bcfb"}
