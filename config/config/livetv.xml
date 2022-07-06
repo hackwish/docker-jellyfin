@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LiveTvOptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GuideDays xsi:nil="true" />
+  <EnableRecordingSubfolders>false</EnableRecordingSubfolders>
+  <EnableOriginalAudioWithEncodedRecordings>false</EnableOriginalAudioWithEncodedRecordings>
+  <TunerHosts>
+    <TunerHostInfo>
+      <Id>01fe3eee409a417482b6a35b20cbf28b</Id>
+      <Url>/media/canales_smart.m3u</Url>
+      <Type>m3u</Type>
+      <ImportFavoritesOnly>false</ImportFavoritesOnly>
+      <AllowHWTranscoding>false</AllowHWTranscoding>
+      <EnableStreamLooping>false</EnableStreamLooping>
+      <TunerCount>0</TunerCount>
+    </TunerHostInfo>
+  </TunerHosts>
+  <ListingProviders />
+  <PrePaddingSeconds>0</PrePaddingSeconds>
+  <PostPaddingSeconds>0</PostPaddingSeconds>
+  <MediaLocationsCreated />
+  <RecordingPostProcessorArguments>"{path}"</RecordingPostProcessorArguments>
+</LiveTvOptions>
