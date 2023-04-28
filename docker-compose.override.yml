@@ -1,5 +1,10 @@
 
 services:
   jellyfin:
+    group_add:
+      - "110" # Change this to match your "render" host group id and remove this comment
+      - "44" # Change this to match your "video" host group id and remove this comment
     volumes:
       - ./ANY_YOU_NEED:/ANY_YOU_NEED
+    environment:
+      - JELLYFIN_PublishedServerUrl=http://example.com
