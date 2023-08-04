@@ -1,0 +1,43 @@
+{
+    "content": "{{MentionType}}",
+    "avatar_url": "{{AvatarUrl}}",
+    "username": "{{{BotUsername}}}",
+    "embeds": [
+        {   
+            "author": {
+                "name": "User • {{{NotificationUsername}}}",
+
+                "url": "{{ServerUrl}}/web/index.html#!/useredit.html?userId={{UserId}}"
+            },
+
+            "thumbnail":{
+                "url": "{{ServerUrl}}/Users/{{UserId}}/Images/Primary"
+            },
+
+            "description": "
+            {{~#if_exist NotificationUsername~}}
+                > ``{{{NotificationUsername}}}`` has login on ``{{{ServerName}}}``.\n\n
+            {{~else~}}
+                > ``{{{NotificationUsername}}}`` has login off ``{{{ServerName}}}``.\n\n
+            {{~/if_exist~}}
+
+            {{~#if_exist ServerUrl~}}
+                [**Reset Password**]({{ServerUrl}}/web/index.html#!/userpassword.html?userId={{UserId}})
+            {{~/if_exist~}}
+            ",
+
+            {{~#if_exist NotificationUsername~}}
+                "color": "3394611",
+            {{~else~}}
+                "color": "15737923",
+            {{~/if_exist~}}
+
+            "footer": {
+                "text": "{{{ServerName}}}",
+                "icon_url": "{{AvatarUrl}}"
+            },
+
+            "timestamp": "{{Timestamp}}"
+        }
+    ]
+}
