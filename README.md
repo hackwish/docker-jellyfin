@@ -1,8 +1,8 @@
 # Docker Jellyfin
 
-This repo contains base files to depoy Jellyfin Server with reverse proxy using Nginx (based on docs, <https://jellyfin.org/docs/general/networking/nginx.html>)
+This repo contains base files to depoy Jellyfin Server.
 
 ## How-to
 - Clone the repo
 - Edit "docker-compose.override" to add new/own sources
-- docker-compose up
+- ``docker-compose pull && docker-compose down && docker-compose up -d --remove-orphans``

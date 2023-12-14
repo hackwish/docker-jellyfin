@@ -2,9 +2,20 @@
 services:
   jellyfin:
     group_add:
-      - "110" # Change this to match your "render" host group id and remove this comment
-      - "44" # Change this to match your "video" host group id and remove this comment
+      - "109" # Change this to match your "render" host group id. Use command: getent group render | cut -d: -f3
+      - "44" # Change this to match your "video" host group id. Use command: getent group video | cut -d: -f3
     volumes:
       - ./ANY_YOU_NEED:/ANY_YOU_NEED
+    # privileged: true
+    network_mode: host
+    dns:
+      - 9.9.9.9
+      - 1.1.1.1
+    # ports:
+    #   - 8096:8096
     environment:
-      - JELLYFIN_PublishedServerUrl=http://example.com
+      JELLYFIN_PublishedServerUrl: http://example.com
+      ROC_ENABLE_PRE_VEGA: 1
+    devices:
+      - /dev/dri:/dev/dri # VAAPI/NVDEC/NVENC render node
+      - /dev/kfd:/dev/kfd # Remove this device if you don't use the OpenCL tone-mapping
