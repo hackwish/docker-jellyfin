@@ -21,7 +21,6 @@ services:
       - /dev/kfd:/dev/kfd # Remove this device if you don't use the OpenCL tone-mapping
   jellystat-db:
     environment:
-      POSTGRES_DB: 'jfstat'
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: mypassword
   jellystat:
