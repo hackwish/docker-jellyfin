@@ -19,3 +19,15 @@ services:
     devices:
       - /dev/dri:/dev/dri # VAAPI/NVDEC/NVENC render node
       - /dev/kfd:/dev/kfd # Remove this device if you don't use the OpenCL tone-mapping
+  jellystat-db:
+    environment:
+      POSTGRES_DB: 'jfstat'
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mypassword
+  jellystat:
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_IP: jellystat-db
+      POSTGRES_PORT: 5432
+      JWT_SECRET: 'my-secret-jwt-key'
