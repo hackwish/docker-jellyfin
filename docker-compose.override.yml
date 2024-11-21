@@ -26,14 +26,14 @@ services:
       # - /dev/mali0:/dev/mali0 # Only for Pi/Arm devices
       # - /dev/rga:/dev/rga # Only for Pi/Arm devices
       # - /dev/mpp_service:/dev/mpp_service # Only for Pi/Arm devices
-  jellystat-db:
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: mypassword
-  jellystat:
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: mypassword
-      POSTGRES_IP: jellystat-db
-      POSTGRES_PORT: 5432
-      JWT_SECRET: 'my-secret-jwt-key'
+  # jellystat-db:
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: mypassword
+  # jellystat:
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: mypassword
+  #     POSTGRES_IP: jellystat-db
+  #     POSTGRES_PORT: 5432
+  #     JWT_SECRET: 'my-secret-jwt-key'

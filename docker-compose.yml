@@ -15,41 +15,41 @@ services:
       - ./transcode:/transcode
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
-  jellystat-db:
-    container_name: jellystat-db
-    image: postgres:15.2
-    environment:
-      POSTGRES_DB: 'jfstat'
-      SET_CONTAINER_TIMEZONE: 'true'
-      CONTAINER_TIMEZONE: America/Santiago
-      TZ: America/Santiago
-    volumes:
-    - ./postgres-data:/var/lib/postgresql/data # Mounting the volume
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready", "-d", "jfstat"]
-      interval: 30s
-      timeout: 60s
-      retries: 5
-      start_period: 80s  
-  jellystat:
-    container_name: jellystat
-    image: cyfershepard/jellystat:latest
-    environment:
-      SET_CONTAINER_TIMEZONE: 'true'
-      CONTAINER_TIMEZONE: America/Santiago
-      TZ: America/Santiago
-    ports:
-      - "3000:3000" #Server Port
-    volumes:
-      - ./backup-data:/app/backend/backup-data # Mounting the volume
-    depends_on:
-      - jellystat-db
+  # jellystat-db:
+  #   container_name: jellystat-db
+  #   image: postgres:15.2
+  #   environment:
+  #     POSTGRES_DB: 'jfstat'
+  #     SET_CONTAINER_TIMEZONE: 'true'
+  #     CONTAINER_TIMEZONE: America/Santiago
+  #     TZ: America/Santiago
+  #   volumes:
+  #   - ./postgres-data:/var/lib/postgresql/data # Mounting the volume
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready", "-d", "jfstat"]
+  #     interval: 30s
+  #     timeout: 60s
+  #     retries: 5
+  #     start_period: 80s  
+  # jellystat:
+  #   container_name: jellystat
+  #   image: cyfershepard/jellystat:latest
+  #   environment:
+  #     SET_CONTAINER_TIMEZONE: 'true'
+  #     CONTAINER_TIMEZONE: America/Santiago
+  #     TZ: America/Santiago
+  #   ports:
+  #     - "3000:3000" #Server Port
+  #   volumes:
+  #     - ./backup-data:/app/backend/backup-data # Mounting the volume
+  #   depends_on:
+  #     - jellystat-db
 
 volumes:
   config:
   cache:
   media:
   transcode:
-  postgres-data:
-  data:
-  backup-data:
+  # postgres-data:
+  # data:
+  # backup-data:
