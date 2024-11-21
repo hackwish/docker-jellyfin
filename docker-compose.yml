@@ -12,6 +12,7 @@ services:
       - ./config:/config
       - ./cache:/cache
       - ./media:/media
+      - ./transcode:/transcode
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
   jellystat-db:
@@ -48,6 +49,7 @@ volumes:
   config:
   cache:
   media:
+  transcode:
   postgres-data:
   data:
   backup-data:

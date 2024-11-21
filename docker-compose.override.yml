@@ -1,6 +1,9 @@
 
 services:
   jellyfin:
+    security_opt: # enables full access to /sys and /proc, still far better than privileged: true
+      - systempaths=unconfined
+      - apparmor=unconfined
     group_add:
       - "109" # Change this to match your "render" host group id. Use command: getent group render | cut -d: -f3
       - "44" # Change this to match your "video" host group id. Use command: getent group video | cut -d: -f3
@@ -18,7 +21,11 @@ services:
       ROC_ENABLE_PRE_VEGA: 1
     devices:
       - /dev/dri:/dev/dri # VAAPI/NVDEC/NVENC render node
+      - /dev/dma_heap:/dev/dma_heap
       - /dev/kfd:/dev/kfd # Remove this device if you don't use the OpenCL tone-mapping
+      # - /dev/mali0:/dev/mali0 # Only for Pi/Arm devices
+      # - /dev/rga:/dev/rga # Only for Pi/Arm devices
+      # - /dev/mpp_service:/dev/mpp_service # Only for Pi/Arm devices
   jellystat-db:
     environment:
       POSTGRES_USER: postgres
