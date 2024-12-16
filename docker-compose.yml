@@ -15,19 +15,19 @@ services:
       - ./transcode:/transcode
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
-  movie-roulette:
-    image: sahara101/movie-roulette:latest # sahara101/movie-roulette:arm-latest
-    container_name: movie-roulette
-    ports:
-      - 4000:4000
-    volumes:
-      - ./movie-roulette:/app/data
-    restart: unless-stopped
-    user: 1000:1000
-    environment:
-      SET_CONTAINER_TIMEZONE: 'true'
-      CONTAINER_TIMEZONE: America/Santiago
-      TZ: America/Santiago
+  # movie-roulette:
+  #   image: sahara101/movie-roulette:latest # sahara101/movie-roulette:arm-latest
+  #   container_name: movie-roulette
+  #   # ports:
+  #   #   - 4000:4000
+  #   volumes:
+  #     - ./movie-roulette:/app/data
+  #   restart: unless-stopped
+  #   user: 1000:1000
+  #   environment:
+  #     SET_CONTAINER_TIMEZONE: 'true'
+  #     CONTAINER_TIMEZONE: America/Santiago
+  #     TZ: America/Santiago
   # jellystat-db:
   #   container_name: jellystat-db
   #   image: postgres:15.2
@@ -63,6 +63,7 @@ volumes:
   cache:
   media:
   transcode:
+  # movie-roulette:
   # postgres-data:
   # data:
   # backup-data:
