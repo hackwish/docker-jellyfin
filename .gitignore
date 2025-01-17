@@ -1,5 +1,6 @@
 cache/
 config/
+*config-*/*
 media/
 ANY_YOU_NEED/
 backup/

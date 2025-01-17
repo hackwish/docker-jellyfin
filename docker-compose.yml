@@ -15,6 +15,20 @@ services:
       - ./transcode:/transcode
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
+  jellyseerr:
+     image: fallenbagel/jellyseerr:latest
+     container_name: jellyseerr
+     environment:
+      LOG_LEVEL: debug
+      PUID: 1000
+      PGID: 1000
+      SET_CONTAINER_TIMEZONE: 'true'
+      CONTAINER_TIMEZONE: America/Santiago
+     ports:
+          - 5055:5055
+     volumes:
+          - ./config-jellyseerr:/app/config
+     restart: unless-stopped
   # movie-roulette:
   #   image: sahara101/movie-roulette:latest # sahara101/movie-roulette:arm-latest
   #   container_name: movie-roulette
@@ -63,6 +77,7 @@ volumes:
   cache:
   media:
   transcode:
+  config-jellyseerr:
   # movie-roulette:
   # postgres-data:
   # data:
